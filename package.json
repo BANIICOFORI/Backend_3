@@ -1,14 +1,22 @@
 {
-  "name": "Backend_3",
+  "name": "BankServer",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Nick",
   "license": "MIT",
-  "scripts":{
-    "start":"nodemon"
+  "scripts": {
+    "start": "nodemon"
   },
+  "keywords": [
+    "Bank",
+    "Account",
+    "Server"
+  ],
   "dependencies": {
+    "body-parser": "^1.20.1",
     "express": "^4.18.2",
     "nodemon": "^2.0.20"
-  }
+  },
+  "description": "This server help you to manage your Bank accounts",
+  "repository": "https://github.com/BANIICOFORI/Backend_3.git"
 }

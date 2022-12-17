@@ -3,9 +3,11 @@ const express = require("express");
 //import path Model
 const path = require("path"); 
 const server = express();
+const bodyParser = require("body-parser");
 
 //Add a Middelwaare
 server.use(express.static(path.join(__dirname, "public")));
+server.use(bodyParser.urlencoded({extended: false}))
 
 // //middleware definitions
 //     const serveHomepage = (req, res) => {
@@ -22,30 +24,30 @@ server.use(express.static(path.join(__dirname, "public")));
 //     //send the file to client
 //     res.sendfile(profilepagepath);
 //  }
-    const Aboutpage = (req, res) => {
-    // find the file 
-    const aboutpagepath = path.join(__dirname, "public","about.html");
-    //send the file to client
-    res.sendfile(aboutpagepath);
- }
- const contactpage = (req, res) => {
-    // find the file 
-    const contactpagepath = path.join(__dirname, "public","contact.html");
-    //send the file to client
-    res.sendfile(contactpagepath);
- }
- const servicespage = (req, res) => {
-    // find the file 
-    const servicespagepath = path.join(__dirname, "public","services.html");
-    //send the file to client
-    res.sendfile(servicespagepath);
- }
- const blogpage = (req, res) => {
-    // find the file 
-    const blogpagepath = path.join(__dirname, "public","blog.html");
-    //send the file to client
-    res.sendfile(blogpagepath);
- }
+//     const Aboutpage = (req, res) => {
+//     // find the file 
+//     const aboutpagepath = path.join(__dirname, "public","about.html");
+//     //send the file to client
+//     res.sendfile(aboutpagepath);
+//  }
+//  const contactpage = (req, res) => {
+//     // find the file 
+//     const contactpagepath = path.join(__dirname, "public","contact.html");
+//     //send the file to client
+//     res.sendfile(contactpagepath);
+//  }
+//  const servicespage = (req, res) => {
+//     // find the file 
+//     const servicespagepath = path.join(__dirname, "public","services.html");
+//     //send the file to client
+//     res.sendfile(servicespagepath);
+//  }
+//  const blogpage = (req, res) => {
+//     // find the file 
+//     const blogpagepath = path.join(__dirname, "public","blog.html");
+//     //send the file to client
+//     res.sendfile(blogpagepath);
+//  }
 const loginRequsthandler = (req, res) => {
     // console.log(req)
     // let body = "";
@@ -53,17 +55,18 @@ const loginRequsthandler = (req, res) => {
     //     body += chunk;
     // });
     // req.on("end",() => {
-    //     //Pass data with regbxp
-    //     console.log(body);
-    // })
+        //Pass data with regbxp
+        
+    //})
+    console.log(req.body);
     res.send("Login suscessfuly")
 }
 //Route definition
 // server.get("/", serveHomepage);
-server.get("/about", Aboutpage);
-server.get("/contact", contactpage);
-server.get("/services", servicespage);
-server.get("/blog", blogpage);
+// server.get("/about", Aboutpage);
+// server.get("/contact", contactpage);
+// server.get("/services", servicespage);
+// server.get("/blog", blogpage);
 
 //USING POSTMAN FOR TEST
 server.post("/Login",loginRequsthandler)

@@ -54,7 +54,7 @@ const loginRequsthandler = (req, res) => {
     // });
     // req.on("end",() => {
     //     //Pass data with regbxp
-    //     console.log(body);
+         console.log(body);
     // })
     res.send("Login suscessfuly")
 }
